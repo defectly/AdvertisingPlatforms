@@ -21,10 +21,11 @@ public class PlatformRepository : IPlatformRepository
 
     private Platform[] Search(string location)
     {
+        var parts = location.Split('/', StringSplitOptions.RemoveEmptyEntries);
+
         return _platforms
             .Where(p => p.Locations.Any(l =>
             {
-                var parts = location.Split('/', StringSplitOptions.RemoveEmptyEntries);
 
                 for (int i = parts.Length - 1; i > -1; i--)
                 {
