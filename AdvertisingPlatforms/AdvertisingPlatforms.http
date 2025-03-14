@@ -1,0 +1,56 @@
+@AdvertisingPlatforms_HostAddress = http://localhost:5086
+
+PUT {{AdvertisingPlatforms_HostAddress}}/platforms
+Content-Type: application/json
+[
+  {
+    "Name": "яндекс.ƒирект",
+    "Locations": [
+      "/ru"
+    ]
+  },
+  {
+    "Name": "–евдинский рабочий",
+    "Locations": [
+      "/ru/svrd/revda",
+      "/ru/svrd/pervik"
+    ]
+  },
+  {
+    "Name": "√азета уральских москвичей",
+    "Locations": [
+      "/ru/msk",
+      "/ru/permobl",
+      "/ru/chelobl"
+    ]
+  },
+  {
+    "Name": " рута€ реклама",
+    "Locations": [
+      "/ru/svrd"
+    ]
+  }
+]
+
+###
+
+GET {{AdvertisingPlatforms_HostAddress}}/platforms/
+Accept: application/json
+
+###
+
+GET {{AdvertisingPlatforms_HostAddress}}/platforms?location=/ru/msk
+
+###
+
+GET {{AdvertisingPlatforms_HostAddress}}/platforms?location=/ru/svrd
+
+###
+
+GET {{AdvertisingPlatforms_HostAddress}}/platforms?location=/ru/svrd/revda
+
+###
+
+GET {{AdvertisingPlatforms_HostAddress}}/platforms?location=/ru
+
+###
